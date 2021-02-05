@@ -105,19 +105,20 @@ function updateProductsTable() {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var dump = JSON.parse(this.responseText);
-            var content = document.getElementById('content');
+            var content = '';
             var forumPostContent = document.getElementById('forum-post-content');
             var reversed = Object.keys(dump).reverse();
             var query = urlSearchParams.has('q') ? urlSearchParams.get('q') : '';
             var querySuccess = false;
             for (var i in reversed) {
                 if (dump[reversed[i]]['name'].toLowerCase().match(wildcardToRegExp(query.toLowerCase()))) {
-                    content.innerHTML += '<tr><td><a href="/download?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
+                    content += '<tr><td><a href="/download?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
                     forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.hostname + '/download?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL] - ID: ' + reversed[i] + '\n';
                     querySuccess = true;
                 }
             }
             if (querySuccess) {
+                document.getElementById('content').innerHTML = content;
                 document.getElementById('content-container').classList.remove('hidden');
                 $('.ui.styled.fluid.accordion').accordion();
                 document.getElementById('forum-post-container').classList.remove('hidden');

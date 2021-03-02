@@ -24,7 +24,7 @@ function updateDownloadLinks() {
                                     document.getElementById('error-content').innerHTML = 'An error occured during making requests to the Microsoft API. You\'ve exceeded your limit.';
                                     document.getElementById('error-container').classList.remove('hidden');
                                 } else if (link != 'https://www.microsoft.com/en-us/software-download/faq') {
-                                    var validUntil = new Date(parseInt(link.split('&')[1].substring(2)) * 1000).toUTCString();
+                                    var validUntil = getHumanReadableDateTime(link.split('&')[1].substring(2) * 1000);
                                     downloadLinksContent.innerHTML += '<tr><td><a href="' + link + '">' + link.split('/').pop().split('?')[0] + '</a></td><td>' + validUntil + '</td></tr>';
                                     forumPostContent.innerHTML += '[URL=\'' + link + '\']' + link.split('/').pop().split('?')[0] + '[/URL] - Valid until: ' + validUntil + '\n';
                                     document.getElementById('download-links-container').classList.remove('hidden');

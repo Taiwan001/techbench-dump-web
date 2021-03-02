@@ -113,7 +113,7 @@ function updateProductsTable() {
             for (var i in reversed) {
                 if (dump[reversed[i]]['name'].toLowerCase().match(wildcardToRegExp(query.toLowerCase()))) {
                     content += '<tr><td><a href="download.html?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
-                    forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.host + 'download.html?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL] - ID: ' + reversed[i] + '\n';
+                    forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.host + '/download.html?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL] - ID: ' + reversed[i] + '\n';
                     querySuccess = true;
                 }
             }

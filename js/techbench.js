@@ -112,8 +112,8 @@ function updateProductsTable() {
             var querySuccess = false;
             for (var i in reversed) {
                 if (dump[reversed[i]]['name'].toLowerCase().match(wildcardToRegExp(query.toLowerCase()))) {
-                    content += '<tr><td><a href="/download?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
-                    forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.host + '/download?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL] - ID: ' + reversed[i] + '\n';
+                    content += '<tr><td><a href="/download.html?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
+                    forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.host + '/download.html?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL] - ID: ' + reversed[i] + '\n';
                     querySuccess = true;
                 }
             }
@@ -149,7 +149,7 @@ function updateRecentlyAddedProductsTable() {
             var reversed = Object.keys(dump).reverse();
             var i = 0;
             while (i < 10) {
-                content.innerHTML += '<tr><td><a href="/download?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
+                content.innerHTML += '<tr><td><a href="/download.html?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
                 i++;
             }
             document.getElementById('content-container').classList.remove('hidden');

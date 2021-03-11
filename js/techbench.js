@@ -26,7 +26,7 @@ function updateDownloadLinks() {
                                 } else if (link != 'https://www.microsoft.com/en-us/software-download/faq') {
                                     var validUntil = getHumanReadableDateTime(link.split('&')[1].substring(2) * 1000);
                                     downloadLinksContent.innerHTML += '<tr><td><a href="' + link + '">' + link.split('/').pop().split('?')[0] + '</a></td><td>' + validUntil + '</td></tr>';
-                                    forumPostContent.innerHTML += '[URL=\'' + link + '\']' + link.split('/').pop().split('?')[0] + '[/URL] - Valid until: ' + validUntil + '\n';
+                                    forumPostContent.innerHTML += '[URL=\'' + link + '\']' + link.split('/').pop().split('?')[0] + '[/URL][PLAIN] - Valid until: ' + validUntil + '[/PLAIN]\n';
                                     document.getElementById('download-links-container').classList.remove('hidden');
                                     $('.ui.styled.fluid.accordion').accordion();
                                     document.getElementById('forum-post-container').classList.remove('hidden');
@@ -113,7 +113,7 @@ function updateProductsTable() {
             for (var i in reversed) {
                 if (dump[reversed[i]]['name'].toLowerCase().match(wildcardToRegExp(query.toLowerCase()))) {
                     content += '<tr><td><a href="download.html?id=' + reversed[i] + '">' + dump[reversed[i]]['name'] + '</a></td><td><code>' + reversed[i] + '</code></td></tr>';
-                    forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.host + '/download.html?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL] - ID: ' + reversed[i] + '\n';
+                    forumPostContent.innerHTML += '[URL=\'' + window.location.protocol + '//' + window.location.host + '/download.html?id=' + reversed[i] + '\']' + dump[reversed[i]]['name'] + '[/URL][PLAIN] - ID: ' + reversed[i] + '[/PLAIN]\n';
                     querySuccess = true;
                 }
             }

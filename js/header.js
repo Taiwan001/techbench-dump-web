@@ -2,6 +2,7 @@ var homeClassList = 'item';
 var productsClassList = 'item';
 var page = window.location.pathname.split('/').pop();
 switch (page) {
+    case 'download.html':
     case 'products.html':
         productsClassList = 'active item';
         break;

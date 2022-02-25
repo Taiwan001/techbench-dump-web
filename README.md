@@ -1,13 +1,13 @@
 # techbench-dump-web
 An easy to use website to generate links for Microsoft products.
 
-The official website can be found here: https://techbench.luzea.ovh
+The official website can be found here: https://techbench.luzea.de
 
 ## Installation
 ```
 cd /var/www/html <-- your website root
 git clone https://github.com/luzeagithub/techbench-dump-web.git .
-wget https://techbench.luzea.ovh/dump.json
+wget https://techbench.luzea.de/dump.json
 ```
 
 You can download regulary updated dumps using the link from above or generate them yourself using [techbench-json-dump](https://github.com/luzeagithub/techbench-json-dump).
